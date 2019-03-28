@@ -31,7 +31,7 @@ int menu(){
   cout << endl << "-----------------Citation Machine------------------" << endl << endl;
   cout << "Which citation format would you like to use to cite your work?" << endl;
   cout << "1. APA style" << endl << "2. MLA style" << endl;
-  cin >> selection;;
+  cin >> selection;
   cout << endl << "---------------------------------------------------" << endl << endl;
   //input validating loop
   while (format != 1 && format != 2)
