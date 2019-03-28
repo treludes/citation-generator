@@ -39,7 +39,7 @@ int menu(){
     cout << "INVALID ENTRY!" << endl;
     cout << "Which Format would you like to cite your work?" << endl;
     cout << "1. APA style" << endl << "2. MLA style" << endl;
-    cin >> selection;;
+    cin >> selection;
     cout << endl << "---------------------------------------------------" << endl << endl;
   }
 
