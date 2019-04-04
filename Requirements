@@ -1,0 +1,19 @@
+Requirements Specifications Document
+
+Project Overview:
+
+Our project is to create a program that will generatate citations in the format selected by the user, either APA or MLA. The program will need to correctly format information entered by the user and check for potential errors in the information entered.
+
+Project Objectives:
+    • Create a user friendly interface
+    • Check user input to verify data
+    • Format the data into the selected citation
+    • Output citations to file if desired
+
+Structured Requiremetns:
+    1. 
+
+
+
+
+Bibliography:
