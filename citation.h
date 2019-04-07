@@ -13,7 +13,6 @@ private:
 
   struct ListNode{
     struct ListNode *next;
-    struct ListNode *previous;
     Citation value;
   };
 
@@ -22,8 +21,8 @@ private:
 public:
   Citation();
   ~Citation();
-  void insertNode();
-  void deleteNode();
+  void insertNode(Citation);
+  void deleteNode(Citation);
   void display() const;
   void save() const;
   void load() const;
