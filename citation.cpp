@@ -1,4 +1,7 @@
 #include "citation.h"
+#include <iostream>
+#include <string>
+using namespace std;
 //**************************************************
 // constructor								                     *
 // 												                         *
@@ -6,6 +9,7 @@
 Citation::Citation(){
   //Make sure head starts out pointing to NULL
   head = nullptr;
+  //numCitations = 0;
 }
 //**************************************************
 // Destructor                                      *
@@ -29,16 +33,21 @@ Citation::~Citation(){
 
 }
 
-void Citation::insertNode(Citation value){
+void Citation::insertNode(int type,string date, string pg, string auth, string title){
   //create pointers
   ListNode *newNode;
   ListNode *nodePtr;
 
   //create new node
   newNode = new ListNode;
-  newNode->value = value;
-  newNode->next = nullptr;
+  newNode->type = type;
+  newNode->date = date;
+  newNode->pages = pg;
+  newNode->author = auth;
+  newNode->title = title;
 
+  newNode->next = nullptr;
+  //numCitations++;
   //check for head
   if(!head){
 	   head = newNode;
@@ -46,14 +55,14 @@ void Citation::insertNode(Citation value){
 	else{
 	   nodePtr = head;
      //fix this section
-		while(nodePtr->next){
+		while(nodePtr->next && newNode->author < nodePtr->author){
 		   nodePtr = nodePtr->next;
 		}
 		nodePtr->next = newNode;
 	}
 }
 
-void Citation::deleteNode(Citation value){
+void Citation::deleteNode(string value){
   //create pointers
   ListNode *previousNode;
   ListNode *nodePtr;
@@ -61,7 +70,7 @@ void Citation::deleteNode(Citation value){
   if(!head)
     return;
 
-  if(head->value == value)
+  if(head->author == value)
   {
     nodePtr = head->next;
     delete head;
@@ -70,10 +79,11 @@ void Citation::deleteNode(Citation value){
 
   else{
     nodePtr = head;
-    while(nodePtr != nullptr && nodePtr->value != value){
+    while(nodePtr != nullptr && nodePtr->author != value){
       previousNode = nodePtr;
       nodePtr = nodePtr->next;
     }
+    //numCitations--;
   }
 
   if(nodePtr){
@@ -85,8 +95,10 @@ void Citation::display(){
   //create pointer
   ListNode *nodePtr;
   nodePtr = head;
+  cout << "\t\t\t" << "Refrences" << endl;
   while(nodePtr){
-  cout << nodePtr->value << endl;
+  cout << nodePtr->author << "(" << nodePtr->date
+       << ") pg " <<nodePtr->pages << endl << "\t" << nodePtr->title << endl << endl;
   nodePtr = nodePtr->next;
   }
 }
@@ -99,18 +111,18 @@ void Citation::load(){
 void Citation::printToFile(){
 
 }
-void Citation::setType(){
+void Citation::setType(string value){
 
 }
-void Citation::setAuthor(){
+void Citation::setAuthor(string value){
 
 }
-void Citation::setDate(){
+void Citation::setDate(string value){
 
 }
-void Citation::setTitle(){
+void Citation::setTitle(string value){
 
 }
-void Citation::setPages(){
+void Citation::setPages(string value){
 
 }

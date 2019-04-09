@@ -1,19 +1,18 @@
 #ifndef CITATION_H
 #define CITATION_H
-
-Class Citation{
+#include<string>
+class Citation{
 private:
-  int type;
-  std::string author;
-  int date;
-  std::string title;
-  int pages;
 
-  static int numCitations;
+  //static int numCitations;
 
   struct ListNode{
     struct ListNode *next;
-    Citation value;
+    int type;
+    std::string date;
+    std::string pages;
+    std::string author;
+    std::string title;
   };
 
   ListNode *head;
@@ -21,15 +20,17 @@ private:
 public:
   Citation();
   ~Citation();
-  void insertNode(Citation);
-  void deleteNode(Citation);
-  void display() const;
-  void save() const;
-  void load() const;
-  void printToFile() const;
-  void setType();
-  void setAuthor();
-  void setDate();
-  void setTitle();
-  void setPages();
+  void insertNode(int type,std::string date,std::string pg, std::string auth, std::string title);
+  void deleteNode(std::string);
+  void display();
+  void save();
+  void load();
+  void printToFile();
+  void setType(std::string value);
+  void setAuthor(std::string value);
+  void setDate(std::string value);
+  void setTitle(std::string value);
+  void setPages(std::string value);
 };
+
+#endif
