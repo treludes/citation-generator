@@ -4,7 +4,6 @@
 class Citation{
 private:
 
-  //static int numCitations;
 
   struct ListNode{
     struct ListNode *next;
