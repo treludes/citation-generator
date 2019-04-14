@@ -12,6 +12,9 @@ private:
     std::string pages;
     std::string author;
     std::string title;
+    std::string pubCity;
+    std::string PubState;
+    std::string publisher;
   };
 
   ListNode *head;
@@ -19,7 +22,8 @@ private:
 public:
   Citation();
   ~Citation();
-  void insertNode(int type,std::string date,std::string pg, std::string auth, std::string title);
+  void insertNode(int type,std::string date, std::string pg, std::string auth,
+          std::string title, std::string pubCity, std::string PubState, std::string publisher);
   void deleteNode(std::string);
   void display();
   void save();

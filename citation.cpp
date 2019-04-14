@@ -33,7 +33,8 @@ Citation::~Citation(){
 
 }
 
-void Citation::insertNode(int type,string date, string pg, string auth, string title){
+void Citation::insertNode(int type,string date, string pg, string auth,
+        string title, string pubCity, string PubState, string publisher){
   //create pointers
   ListNode *newNode;
   ListNode *nodePtr;
@@ -102,27 +103,11 @@ void Citation::display(){
   nodePtr = nodePtr->next;
   }
 }
-void Citation::save(){
-
-}
-void Citation::load(){
-
-}
-void Citation::printToFile(){
-
-}
-void Citation::setType(string value){
-
-}
-void Citation::setAuthor(string value){
-
-}
-void Citation::setDate(string value){
-
-}
-void Citation::setTitle(string value){
-
-}
-void Citation::setPages(string value){
-
-}
+void Citation::save(){}
+void Citation::load(){}
+void Citation::printToFile(){}
+void Citation::setType(string value){}
+void Citation::setAuthor(string value){}
+void Citation::setDate(string value){}
+void Citation::setTitle(string value){}
+void Citation::setPages(string value){}
